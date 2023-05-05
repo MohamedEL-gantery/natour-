@@ -7,7 +7,7 @@ module.exports = class Email {
     (this.to = user.email),
       (this.fristName = user.name.split(' ')[0]),
       (this.url = url),
-      (this.form = `Jonas Schmedtmann <${process.env.EMAIL_FROM}>`);
+      (this.form = `Mohamed  <${process.env.EMAIL_FROM}>`);
   }
 
   newTransport() {
@@ -23,11 +23,11 @@ module.exports = class Email {
     }
 
     return nodemailer.createTransport({
-      host: 'smtp.mailtrap.io',
-      port: 2525,
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
       auth: {
-        user: '72cbbdb172d63d',
-        pass: 'a8bb40308c3a5a',
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD,
       },
     });
   }

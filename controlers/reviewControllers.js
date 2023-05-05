@@ -1,6 +1,5 @@
 const Review = require('./../models/reviewModel');
 const factory = require('./handleFactoroy');
-//const catchAsync = require('./../utils/catchAsync');
 
 exports.setTourUserIds = (req, res, next) => {
   // Allows nested routes

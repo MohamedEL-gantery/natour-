@@ -41,11 +41,12 @@
   "devDependencies": {
     "@types/express": "^4.17.14",
     "@types/morgan": "^1.9.3",
+    "@types/stripe": "^8.0.417",
     "ndb": "^0.2.4",
     "parcel-bundler": "^1.12.5"
   },
   "engines": {
-    "node": "16.16.0",
+    "node": "^18.12.1",
     "npm": "8.11.0"
   }
 }

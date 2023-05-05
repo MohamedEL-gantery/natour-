@@ -88,7 +88,6 @@ reviewSchema.post('save', function () {
 // FindByIdAndDelete
 reviewSchema.pre(/^findOneAnd/, async function (next) {
   this.r = await this.findOne();
-  //console.log(this.r);
   next();
 });
 
