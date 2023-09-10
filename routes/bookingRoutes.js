@@ -4,6 +4,7 @@ const authController = require('../controlers/authControllers');
 
 const router = express.Router();
 
+// Protect All routes after this middleware
 router.use(authController.protect);
 
 router.get('/checkout-session/:tourId', bookingController.getCheckOutSession);

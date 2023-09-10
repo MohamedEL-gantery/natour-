@@ -9,6 +9,8 @@ exports.getCheckOutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently booked tour
   const tour = await Tour.findById(req.params.tourId);
 
+  const unitAmount = Math.round(tour.price * 100);
+
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
     line_items: [
@@ -16,7 +18,7 @@ exports.getCheckOutSession = catchAsync(async (req, res, next) => {
         quantity: 1,
         price_data: {
           currency: 'usd',
-          unit_amount: tour.price * 100,
+          unit_amount: unitAmount,
           product_data: {
             name: `${tour.name} Tour`,
             description: tour.summary,
